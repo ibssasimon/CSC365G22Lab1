@@ -15,13 +15,11 @@ class Student:
 def main():
     #Populate data from text file
     students = populateData("students.txt")
-    print(students)
     # Write the prompts for user input
-    #writePrompts()
+    writePrompts()
 
     # Ask for user input until user quits
     
-    print(students[0].firstName)
 
 
 def populateData(fileName):
@@ -52,6 +50,16 @@ def populateData(fileName):
 
 
         
+
+def writePrompts():
+    print("S[tudent]: <lastname> [B[us]]")
+    print("T[eacher]: <lastname>")
+    print("B[us]: <number>")
+    print("G[rade]: <number> [H[igh]|L[ow]]")
+    print("A[verage]: <number>")
+    print("I[nfo]")
+    print("Q[uit]")
+
 
     #print(lines)
 
