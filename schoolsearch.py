@@ -14,32 +14,41 @@ class Student:
 
 def main():
     #Populate data from text file
-    students = []
-    populateData("students.txt")
-
+    students = populateData("students.txt")
+    print(students)
     # Write the prompts for user input
     #writePrompts()
 
     # Ask for user input until user quits
     
-
-   
+    print(students[0].firstName)
 
 
 def populateData(fileName):
     #Open the file
     f = open(fileName, "r")
     lines = f.readlines()
+    students = []
 
-    
 
     for line in lines:
         studentRawData = line.strip()
         studentInfo = studentRawData.split(",")
 
-        firstName = studentInfo[0]
-    
-        print(studentInfo)
+        lastName = studentInfo[0]
+        firstName = studentInfo[1]
+        grade = studentInfo[2]
+        classroom = studentInfo[3]
+        bus = studentInfo[4]
+        GPA = studentInfo[5]
+        teacherLastName = studentInfo[6]
+        teacherFirstName = studentInfo[7]
+
+        myStudent = Student(lastName, firstName, grade, classroom, bus, GPA, teacherLastName, teacherFirstName)
+        students.append(myStudent)
+
+    return students
+
 
 
         
