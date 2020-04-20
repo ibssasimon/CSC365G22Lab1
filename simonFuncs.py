@@ -48,5 +48,24 @@ def searchGrade(number, flag):
     print("Teacher: " + curr.teacherFirstName + " " + curr.teacherLastName)
     print("Bus: " + curr.bus)
 
+
+#R10 function takes in a number and returns the average GPA of all students with matching grade
+def searchAverage(number):
+    studentsInSameGrade = []
+    for student in students:
+        if student.grade == number:
+            studentsInSameGrade.append(student)
+
+
+    sum = 0
+    ct = 0
+    for student in studentsInSameGrade:
+        sum += student.GPA
+        ct += 1
+    avg = sum / ct
+    print("Grade level: " + number)
+    print("Average GPA: " + avg)
+
+
 if __name__ == "__main__":
     main()
