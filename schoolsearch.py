@@ -1,3 +1,6 @@
+from arvindFuncs import searchInfo
+from arvindFuncs import searchBus
+
 # Class definition for student
 class Student:
     def __init__(self, lastName, firstName, grade, classroom, bus, GPA, teacherLastName, teacherFirstName):
@@ -16,13 +19,13 @@ def main():
     #Populate data from text file
     students = populateData("students.txt")
 
-    # Write the prompts for user input
-    writePrompts()
-
     # Ask for user input until user quits
     while(1):
         
-        args = input().split()
+        # Write the prompts for user input
+        writePrompts()
+
+        args = input("Command: ").split()
         userInput = args[0]
 
         if(userInput == "Q" or userInput == "Quit"):
@@ -45,13 +48,16 @@ def main():
             searchGrade()
 
         elif userInput == "B" or userInput == "Bus":
-            searchBus()
+            if len(args) == 2:
+                searchBus(students, args[1])
+            else:
+                print("Incorrect use of command")
 
         elif userInput == "A" or userInput == "Average":
             searchAverage()
 
         elif userInput == "I" or userInput == "Info":
-            searchInfo()
+            searchInfo(students)
         else:
             print("Bad command")
             continue
@@ -101,15 +107,7 @@ def searchGrade():
     pass
     # If passed in bad parameters, print "Bad parameter", exit function
 
-def searchBus():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
 def searchAverage():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
-def searchInfo():
     pass
     # If passed in bad parameters, print "Bad parameter", exit function
 
@@ -118,16 +116,14 @@ def searchInfo():
         
 
 def writePrompts():
-    print("S[tudent]: <lastname> [B[us]]")
+    print("\nS[tudent]: <lastname> [B[us]]")
     print("T[eacher]: <lastname>")
     print("B[us]: <number>")
     print("G[rade]: <number> [H[igh]|L[ow]]")
     print("A[verage]: <number>")
     print("I[nfo]")
-    print("Q[uit]")
+    print("Q[uit]\n")
 
-
-    #print(lines)
 
 if __name__ == "__main__":
     main()
