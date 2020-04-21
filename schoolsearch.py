@@ -77,27 +77,33 @@ def main():
 
 def populateData(fileName):
     #Open the file
-    f = open(fileName, "r")
+    try:
+        f = open(fileName, "r")
+
+    except FileNotFoundError:
+        exit()
+    
     lines = f.readlines()
     students = []
 
 
     for line in lines:
-        studentRawData = line.strip()
+        studentRawData = line.strip() 
         studentInfo = studentRawData.split(",")
+        try:
+            lastName = studentInfo[0]
+            firstName = studentInfo[1]
+            grade = studentInfo[2]
+            classroom = studentInfo[3]
+            bus = studentInfo[4]
+            GPA = studentInfo[5]
+            teacherLastName = studentInfo[6]
+            teacherFirstName = studentInfo[7]
 
-        lastName = studentInfo[0]
-        firstName = studentInfo[1]
-        grade = studentInfo[2]
-        classroom = studentInfo[3]
-        bus = studentInfo[4]
-        GPA = studentInfo[5]
-        teacherLastName = studentInfo[6]
-        teacherFirstName = studentInfo[7]
-
-        myStudent = Student(lastName, firstName, grade, classroom, bus, GPA, teacherLastName, teacherFirstName)
-        students.append(myStudent)
-
+            myStudent = Student(lastName, firstName, grade, classroom, bus, GPA, teacherLastName, teacherFirstName)
+            students.append(myStudent)
+        except:
+            exit()
     return students
 
 
