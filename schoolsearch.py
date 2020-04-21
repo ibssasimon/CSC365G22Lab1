@@ -34,15 +34,18 @@ def main():
         elif userInput == "S" or userInput == "Student":
             if(len(args) == 2):
                 # 1 additional argument passed in
-                searchStudent()
-            elif(len(args) == 3):
+                searchStudent(args[2])
+            elif(len(args) == 4 and (args[3] == "B" or args[3] == "Bus")):
                 # 2 addtional arguments passed in
                 # Might have to parse for "B" in bus
-                searchStudent()
+                # Arg 1 is "S", Arg 2 is <lastname>, Arg 3 is "B"
+                searchStudentBus(args[1], args[3])
+            else:
+                print("Bad command")
 
         
         elif userInput == "T" or userInput == "Teacher":
-            searchTeacher()
+            searchTeacher(args[])
         
         elif userInput == "G" or userInput == "Grade":
             searchGrade()
