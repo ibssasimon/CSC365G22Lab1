@@ -1,5 +1,7 @@
 from arvindFuncs import searchInfo
 from arvindFuncs import searchBus
+from simonFuncs import *
+from ericFuncs import *
 
 # Class definition for student
 class Student:
@@ -34,21 +36,24 @@ def main():
         elif userInput == "S" or userInput == "Student":
             if(len(args) == 2):
                 # 1 additional argument passed in
-                searchStudent(args[2])
-            elif(len(args) == 4 and (args[3] == "B" or args[3] == "Bus")):
+                searchStudent(students, args[1])
+            elif(len(args) == 3):
                 # 2 addtional arguments passed in
                 # Might have to parse for "B" in bus
                 # Arg 1 is "S", Arg 2 is <lastname>, Arg 3 is "B"
-                searchStudentBus(args[1], args[3])
+                searchStudentBus(students, args[1], args[2])
             else:
                 print("Bad command")
 
         
         elif userInput == "T" or userInput == "Teacher":
-            searchTeacher(args[])
+            searchTeacher(students, args[1])
         
         elif userInput == "G" or userInput == "Grade":
-            searchGrade()
+            if len(args) == 2:
+                searchGradeR7(students, int(args[1]))
+            else:
+                searchGradeR9(students, int(args[1]), args[2])
 
         elif userInput == "B" or userInput == "Bus":
             if len(args) == 2:
@@ -57,7 +62,7 @@ def main():
                 print("Incorrect use of command")
 
         elif userInput == "A" or userInput == "Average":
-            searchAverage()
+            searchAverageR10(students, int(args[1]))
 
         elif userInput == "I" or userInput == "Info":
             searchInfo(students)
@@ -96,27 +101,6 @@ def populateData(fileName):
     return students
 
 
-
-def searchStudent():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
-
-def searchTeacher():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
-def searchGrade():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
-def searchAverage():
-    pass
-    # If passed in bad parameters, print "Bad parameter", exit function
-
-
-
-        
 
 def writePrompts():
     print("\nS[tudent]: <lastname> [B[us]]")

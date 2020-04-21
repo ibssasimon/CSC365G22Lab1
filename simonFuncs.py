@@ -2,8 +2,7 @@ from schoolsearch import *
 import unittest
 import sys
 
-students = []
-students = populateData("students.txt")
+
 
 # Class definition for student
 class Student:
@@ -19,10 +18,11 @@ class Student:
 
 
 class TestSimonFuncs(unittest.TestCase):
-
+    students = []
+    students = populateData("students.txt")
     # Test case asserts return value of searching all grade 3 students, against expected output
     def test_searchGradeR7(self):
-        self.assertEqual(searchGradeR7(3), (["First Name: XUAN\nLast Name: COOKUS", 
+        self.assertEqual(searchGradeR7(students, 3), (["First Name: XUAN\nLast Name: COOKUS", 
             "First Name: SHANTE\nLast Name: ELHADDAD",
             "First Name: HYE\nLast Name: BRODERSEN",
             "First Name: SHARRI\nLast Name: SWEDLUND",
@@ -35,25 +35,26 @@ class TestSimonFuncs(unittest.TestCase):
 
     # Test case asserts return value of R9 against student with lowest or higheset GPA in class
     def test_searchGradeR9(self):
-        self.assertEqual(searchGradeR9(6, "High"), "Name: PHUONG SCHOENECKER\nGPA: 3.15\nTeacher: JAE GAMBREL\nBus: 0")
+        self.assertEqual(searchGradeR9(students, 6, "High"), "Name: PHUONG SCHOENECKER\nGPA: 3.15\nTeacher: JAE GAMBREL\nBus: 0")
 
 
     #Test case asserts return value of R10 against students the average GPA in a grade level
     def test_searchAverageR10(self):
-        self.assertEqual(searchAverageR10(4), "Grade level: 4\nAverage GPA: 2.95133333333")
+        self.assertEqual(searchAverageR10(students, 4), "Grade level: 4\nAverage GPA: 2.95133333333")
 #R7 function takes in a number as input, and prints the student(s) first and last name with matching GPAs
-def searchGradeR7(number):
+def searchGradeR7(students, number):
     returnString = []
     for student in students:
         if int(student.grade) == number:
             print("First Name: " + student.firstName)
             print("Last Name: " + student.lastName)
+            print("")
             studentGrade = "First Name: {}\nLast Name: {}".format(student.firstName, student.lastName)
             returnString.append(studentGrade)
 
     return returnString
 #R9 function takes in a number and high/low. Returns student in same grade with lowest or highest GPA
-def searchGradeR9(number, flag):
+def searchGradeR9(students, number, flag):
     studentsInSameGrade = []
     high = 0
     low = 0
@@ -91,7 +92,7 @@ def searchGradeR9(number, flag):
 
 
 #R10 function takes in a number and returns the average GPA of all students with matching grade
-def searchAverageR10(number):
+def searchAverageR10(students, number):
     studentsInSameGrade = []
     for student in students:
         if int(student.grade) == number:
@@ -104,6 +105,7 @@ def searchAverageR10(number):
         sum += float(student.GPA)
         ct += 1
     avg = sum / ct
+    avg = round(avg,2)
     print("Grade level: " + str(number))
     print("Average GPA: " + str(avg))
     avgData = "Grade level: {}\nAverage GPA: {}".format(number, avg)
