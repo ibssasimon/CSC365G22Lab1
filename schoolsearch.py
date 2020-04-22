@@ -33,7 +33,7 @@ def main():
         if(userInput == "Q" or userInput == "Quit"):
             break
 
-        elif userInput == "S" or userInput == "Student":
+        elif userInput == "S:" or userInput == "Student:":
             if(len(args) == 2):
                 # 1 additional argument passed in
                 searchStudent(students, args[1])
@@ -46,22 +46,22 @@ def main():
                 print("Bad command")
 
         
-        elif userInput == "T" or userInput == "Teacher":
+        elif userInput == "T:" or userInput == "Teacher:":
             searchTeacher(students, args[1])
         
-        elif userInput == "G" or userInput == "Grade":
+        elif userInput == "G:" or userInput == "Grade:":
             if len(args) == 2:
                 searchGradeR7(students, int(args[1]))
             else:
                 searchGradeR9(students, int(args[1]), args[2])
 
-        elif userInput == "B" or userInput == "Bus":
+        elif userInput == "B:" or userInput == "Bus:":
             if len(args) == 2:
                 searchBus(students, args[1])
             else:
                 print("Incorrect use of command")
 
-        elif userInput == "A" or userInput == "Average":
+        elif userInput == "A:" or userInput == "Average:":
             searchAverageR10(students, int(args[1]))
 
         elif userInput == "I" or userInput == "Info":

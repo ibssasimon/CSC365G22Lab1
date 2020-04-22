@@ -104,6 +104,9 @@ def searchAverageR10(students, number):
     for student in studentsInSameGrade:
         sum += float(student.GPA)
         ct += 1
+
+    if ct == 0:
+        return
     avg = sum / ct
     avg = round(avg,2)
     print("Grade level: " + str(number))

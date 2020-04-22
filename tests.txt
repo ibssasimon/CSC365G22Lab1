@@ -1,0 +1,232 @@
+// CSC 365, Lab 1a Group 22
+// Lab 1-1 test suite
+
+// TC-1
+// Tests Requirements R7
+// command name “Grade”, existing students with matching grade
+// expected output: “First Name: DANILO\nLast Name: SAELEE\n\nFirst Name: JOHN
+// \nLast Name: GARTH”
+
+
+Grade: 1
+
+// TC-2
+// Tests Requirements R7
+// short command name “G”, existing students with matching grade
+// expected output: “First Name: NOLAN\nLast Name: WOOLERY\n\nFirst //Name:EMMANUEL\nLast Name: VILARDO\n\nFirst
+// Name:TODD\nLast Name: //LIBRANDI\n\nFirst Name: BOBBIE\nLast Name: HAVIR\n\nFirst Name: DIEDRA\nLast //Name:
+// SARAO\n\nFirst Name: MIKE\nLast Name: VANCOTT\n\nFirst Name: //TERESE\nLast Name: WICINSKY\n\n
+// First Name: BUSTER\nLast Name: KOZOLA\n\nFirst Name: LEIGHANN\nLast Name: //MULLINGS\n\nFirst Name: BILLY\nLast Name:
+// BUSSMANN\n\nFirst Name: //DICK\nLast Name: BERBES\n\nFirst Name: RANDELL\nLast Name: //MULGREW\n\nFirst Name: LANE\nLast
+// Name: TOWLEY\n\n”
+
+
+G: 2
+
+// TC-3
+// Tests Requirements R9
+// command name “G[rade]: <Number>  [Low]”, student with lowest GPA in grade with   // first name last name, GPA, Teacher 
+// first name, teacher last name, Bus route
+// expected output: “Name: ZANDRA COMO\nGPA: 3\nTeacher: PERLA //CHIONCHIO\nBus: 53”
+
+Grade: 4 Low
+
+// TC-4
+// Tests Requirements R9
+// command name “G[rade]: <Number>  [High]”, student with highest GPA in grade with
+// first name last name, GPA,Teacher first name, teacher last name, Bus route
+// expected output: “Name: PHUONG SCHOENECKER\nGPA: 3.15\nTeacher: JAE GAMBREL\nBus: 0”
+
+Grade: 6 High
+
+// TC-5
+// Tests Requirements R10
+// short command “A: <Number>”, prints Grade and Average GPA
+// expected output: “Grade level: 6\nAverage GPA: 2.98”
+
+A: 6
+
+// TC-6
+// Tests Requirements R10
+// tests command “Average: <Number>”, prints Grade and Average GPA
+// expected output: “Grade level: 4\nAverage GPA: 2.95”
+
+Average: 4
+
+// TC-7
+// Tests Requirements R10
+// tests command “Average: <Number>”, prints Grade and Average GPA
+// expected output: “”
+
+Average: 5
+
+
+// TC-8 
+// Tests Requirements R4
+// short form command name, existing student 
+// expected output: 
+//Student: OBREIN,  STAN GPA: 2.95 Classroom: 111 Teacher: NISTENDIRK, NANCY
+
+S: OBREIN
+
+// TC-9 
+// Tests Requirements R4
+// long form command name, existing student 
+// expected output: 
+//Student: RAPOSE, ALONZO GPA: 3.12 Classroom: 105 Teacher: HANTZ, JED
+
+Student: RAPOSE
+
+// TC-10 
+// Tests Requirements R5
+// short form command name, existing student, bus number
+// expected output: 
+//Student: RAPOSE, ALONZO BUS ROUTE: 51
+
+S: RAPOSE 51
+
+// TC-11 
+// Tests Requirements R5
+// long form command name, existing student 
+// expected output: 
+//Student: OBREIN,  STAN BUS ROUTE: 52
+
+Student: OBREIN
+
+// TC-12
+// Tests Requirements R6
+// short form command name, existing teacher
+// expected output: 
+//Student: ZAPPAVIGNA, ELLIOTT
+//Student: FRIEDSTROM, REED
+
+T: BODZIONY
+
+// TC-13
+// Tests Requirements R6
+// long form command name, existing teacher
+// expected output: 
+//Student: SAELEE, DANILO
+//Student: GARTH, JOHN
+
+TEACHER: FALKER
+
+
+
+// TC-14
+// Test Requirements R3, R8
+// short form command, students that walk
+// expected output: 
+//Student Name: PHUONG SCHOENECKER
+//Student Grade: 6
+//Student Classroom: 109
+//
+//Student Name: MATHILDA FINCHMAN
+//Student Grade: 6
+//Student Classroom: 111
+//
+//Student Name: HYE BRODERSEN
+//Student Grade: 3
+//Student Classroom: 110
+//
+//Student Name: BOBBIE HAVIR
+//Student Grade: 2
+//Student Classroom: 108
+//
+//Student Name: ELDON MASSART
+//Student Grade: 4
+//Student Classroom: 105
+//
+//Student Name: JOHN GARTH
+//Student Grade: 1
+//Student Classroom: 103
+//
+//Student Name: RANDOLPH CREMEANS
+//Student Grade: 6
+//Student Classroom: 109
+//
+//Student Name: CARRIE KREESE
+//Student Grade: 6
+//Student Classroom: 109”
+
+B: 0
+
+// TC-15
+// Test Requirements R3, R8
+// long form command, students who take bus 54
+// expected output: 
+//Student Name: NOLAN WOOLERY
+//Student Grade: 2
+//Student Classroom: 104
+//
+//Student Name: PETER STERBACK
+//Student Grade: 6
+//Student Classroom: 111
+//
+//Student Name: TODD LIBRANDI
+//Student Grade: 2
+//Student Classroom: 108
+//
+//Student Name: ALONZO RAPOSE
+//Student Grade: 4
+//Student Classroom: 105
+//
+//Student Name: TOMAS COVINGTON
+//Student Grade: 3
+//Student Classroom: 107
+//
+//Student Name: LEIGHANN MULLINGS
+//Student Grade: 2
+//Student Classroom: 108
+//
+//Student Name: CARLEE DURAND
+//Student Grade: 4
+//Student Classroom: 101
+//
+//Student Name: REED FRIEDSTROM
+//Student Grade: 6
+//Student Classroom: 106”
+
+Bus: 51
+
+// TC-16
+// Test Requirements R3, R8
+// long form command, students that take bus 1
+// expected output: <empty line>
+
+Bus: 1
+
+// TC-17
+// Test Requirements R3, R11
+// short form command, total number of students in each grade
+// expected output: 0: 0\n, 1: 2\n, 2: 13\n, 3: 9\n, 4: 15\n, 5: 0\n, 6: 21\n
+
+I
+
+// TC-18
+// Test Requirements R3, R11
+// long form command, total number of students in each grade
+// expected output: 0: 0\n, 1: 2\n, 2: 13\n, 3: 9\n, 4: 15\n, 5: 0\n, 6: 21\n
+
+Info 
+
+// TC-19
+// Test Requirements R3, R12
+// short form command, 
+// expected output: program terminates
+
+Q
+
+// TC-20
+// Test Requirements R3, R12
+// long form command, 
+// expected output: program terminates
+
+Quit
+
+// TC-21
+// Test Requirements: E1
+// used “testBad.txt” instead of students.txt, contents as listed:
+// LastName FirstName 4 101 52
+// LastName FirstName 5 102 3.15 TLastName TFirstName
+// expected output: program terminates
