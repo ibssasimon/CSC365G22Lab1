@@ -109,7 +109,7 @@ T: BODZIONY
 //Student: SAELEE, DANILO
 //Student: GARTH, JOHN
 
-TEACHER: FALKER
+Teacher: FALKER
 
 
 
